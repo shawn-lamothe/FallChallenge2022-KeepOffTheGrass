@@ -670,7 +670,7 @@ public class Game {
             Map<Coord, Integer> actualSpawns = Maps.newHashMap();
 
             for (Action spawn : player.spawns) {
-                int spawnCost = Config.COST_UNIT * spawn.getAmount();
+                double spawnCost = ((double)Config.COST_UNIT) * spawn.getAmount();
                 Coord target = spawn.getCoord();
 
                 try {
@@ -780,7 +780,7 @@ public class Game {
             return "SPAWN <n> <x> <y>";
         }
         if (attempt.startsWith("BUILD")) {
-            return "BUILD <n> <x> <y>";
+            return "BUILD <x> <y>";
         }
         if (attempt.startsWith("MESSAGE")) {
             return "MESSAGE <text>";
